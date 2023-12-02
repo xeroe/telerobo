@@ -1,10 +1,8 @@
 #include "webserver.h"
 #include <WiFi.h>
 #include <DNSServer.h>
-
+#include "ssid.h"
 /* CONFIG PART, @KRISSI HIER SACHEN EINTRAGEN*/
-const char *ssid = "ssid";
-const char *password = "passwort";
 
 /* config ende*/
 
