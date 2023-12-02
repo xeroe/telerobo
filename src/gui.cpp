@@ -89,6 +89,7 @@ void setupGui()
      */
     // ESPUI.sliderContinuous = true;
     ESPUI.begin("ESPUI Control");
+    Serial.println(WiFi.getMode() == WIFI_AP ? WiFi.softAPIP() : WiFi.localIP());
 }
 
 void guiLoop()
