@@ -3,8 +3,8 @@
 #include <DNSServer.h>
 
 /* CONFIG PART, @KRISSI HIER SACHEN EINTRAGEN*/
-const char *ssid = "Martin Router King";
-const char *password = "nippelkrebs";
+const char *ssid = "ssid";
+const char *password = "passwort";
 
 /* config ende*/
 
