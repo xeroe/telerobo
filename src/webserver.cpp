@@ -10,7 +10,7 @@ const byte DNS_PORT = 53;
 IPAddress apIP(192, 168, 4, 1);
 DNSServer dnsServer;
 
-const char *hostname = "espui";
+const char *hostname = "telerobo";
 
 void setupWebserver()
 {

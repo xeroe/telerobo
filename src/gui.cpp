@@ -88,7 +88,7 @@ void setupGui()
      * password, for example begin("ESPUI Control", "username", "password")
      */
     // ESPUI.sliderContinuous = true;
-    ESPUI.begin("ESPUI Control");
+    ESPUI.begin("TeleRobo Control");
     Serial.println(WiFi.getMode() == WIFI_AP ? WiFi.softAPIP() : WiFi.localIP());
 }
 
