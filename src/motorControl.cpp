@@ -6,8 +6,8 @@ void setupMotor()
 {
     pinMode(speedPin, OUTPUT);
     pinMode(steerPin, OUTPUT);
-    analogWrite(speedPin, 128);
-    analogWrite(steerPin, 128);
+    analogWrite(speedPin, 0);
+    analogWrite(steerPin, 0);
 }
 
 void forward()
@@ -32,16 +32,16 @@ void right()
 
 void stop()
 {
-    analogWrite(speedPin, 128);
+    analogWrite(speedPin, 0);
 }
 
 void leftrightRelease()
 {
-    analogWrite(steerPin, 128);
+    analogWrite(steerPin, 0);
 }
 
 void resetMotor()
 {
-    analogWrite(speedPin, 128);
-    analogWrite(steerPin, 128);
+    analogWrite(speedPin, 0);
+    analogWrite(steerPin, 0);
 }
