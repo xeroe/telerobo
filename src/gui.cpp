@@ -15,8 +15,9 @@ void padExample(Control *sender, int value)
         break;
 
     case P_LEFT_UP:
-        Serial.print("left up");
         leftrightRelease();
+        Serial.print("left up");
+
         break;
 
     case P_RIGHT_DOWN:
