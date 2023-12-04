@@ -40,7 +40,7 @@ void stop()
 
 void leftrightRelease()
 {
-    analogWrite(rightMotorPin, 0);
+    analogWrite(LeftMotorPin, 0);
     analogWrite(rightMotorPin, 0);
 }
 
