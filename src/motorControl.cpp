@@ -1,47 +1,51 @@
 #include "motorControl.h"
 #include <arduino.h>
-int speedPin = 23;
-int steerPin = 22;
+int LeftMotorPin = 23;
+int rightMotorPin = 22;
 void setupMotor()
 {
-    pinMode(speedPin, OUTPUT);
-    pinMode(steerPin, OUTPUT);
-    analogWrite(speedPin, 0);
-    analogWrite(steerPin, 0);
+    pinMode(LeftMotorPin, OUTPUT);
+    pinMode(rightMotorPin, OUTPUT);
+    analogWrite(LeftMotorPin, 0);
+    analogWrite(rightMotorPin, 0);
 }
 
 void forward()
 {
-    analogWrite(speedPin, 255);
+    analogWrite(LeftMotorPin, 255);
+    analogWrite(rightMotorPin, 255);
 }
 
 void reverse()
 {
-    analogWrite(speedPin, 0);
+    analogWrite(LeftMotorPin, 0);
+    analogWrite(rightMotorPin, 0);
 }
 
 void left()
 {
-    analogWrite(steerPin, 0);
+    analogWrite(LeftMotorPin, 255);
 }
 
 void right()
 {
-    analogWrite(steerPin, 255);
+    analogWrite(rightMotorPin, 255);
 }
 
 void stop()
 {
-    analogWrite(speedPin, 0);
+    analogWrite(LeftMotorPin, 0);
+    analogWrite(rightMotorPin, 0);
 }
 
 void leftrightRelease()
 {
-    analogWrite(steerPin, 0);
+    analogWrite(rightMotorPin, 0);
+    analogWrite(rightMotorPin, 0);
 }
 
 void resetMotor()
 {
-    analogWrite(speedPin, 0);
-    analogWrite(steerPin, 0);
+    analogWrite(LeftMotorPin, 0);
+    analogWrite(rightMotorPin, 0);
 }
