@@ -18,8 +18,8 @@ void forward()
 
 void reverse()
 {
-    analogWrite(LeftMotorPin, 0);
-    analogWrite(rightMotorPin, 0);
+    analogWrite(LeftMotorPin, 128);
+    analogWrite(rightMotorPin, 128);
 }
 
 void left()
