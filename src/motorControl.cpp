@@ -6,8 +6,8 @@ void setupMotor()
 {
     pinMode(LeftMotorPin, OUTPUT);
     pinMode(rightMotorPin, OUTPUT);
-    analogWrite(LeftMotorPin, 0);
-    analogWrite(rightMotorPin, 0);
+    analogWrite(LeftMotorPin, 128);
+    analogWrite(rightMotorPin, 128);
 }
 
 void forward()
