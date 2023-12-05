@@ -30,8 +30,8 @@
 #define TXPIN 22                 // GPIO 5 => TX for Serial1
 #define START_FRAME 0xABCD       // [-] Start frme definition for reliable serial communication
 #define TIME_SEND 100            // [ms] Sending time interval
-#define SPEED_MAX_TEST 300       // [-] Maximum speed for testing
-#define SPEED_STEP 20            // [-] Speed step
+#define SPEED_MAX_TEST 1000      // [-] Maximum speed for testing
+#define SPEED_STEP 40            // [-] Speed step
 
 // #define DEBUG_RX                        // [-] Debug received data. Prints all bytes to serial (comment-out to disable)
 
