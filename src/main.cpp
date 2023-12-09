@@ -18,5 +18,5 @@ void loop(void)
 {
   webserverLoop();
   guiLoop();
-  serialLoop();
+  updateSerial();
 }

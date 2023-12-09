@@ -3,6 +3,7 @@
 #include <arduino.h>
 int LeftMotorPin = 23;
 int rightMotorPin = 22;
+int valueLeft, valueRight = 0;
 void setupMotor()
 {
     /*pinMode(LeftMotorPin, OUTPUT);
@@ -13,27 +14,27 @@ void setupMotor()
 
 void forward()
 {
-    Send(1000, 1000);
+    setValues(1000, 1000);
 }
 
 void reverse()
 {
-    Send(-1000, -1000);
+    setValues(-1000, -1000);
 }
 
 void left()
 {
-    Send(1000, -1000);
+    setValues(1000, -1000);
 }
 
 void right()
 {
-    Send(-1000, 1000);
+    setValues(-1000, 1000);
 }
 
 void stop()
 {
-    Send(0, 0);
+    setValues(0, 0);
 }
 
 void leftrightRelease()
@@ -44,4 +45,15 @@ void leftrightRelease()
 void resetMotor()
 {
     stop();
+}
+
+void setValues(int left, int right)
+{
+    valueLeft = left;
+    valueRight = right;
+}
+
+void updateSerial()
+{
+    Send(valueLeft, valueRight);
 }

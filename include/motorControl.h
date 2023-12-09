@@ -8,5 +8,7 @@ void right();
 void stop();
 void leftrightRelease();
 void resetMotor();
+void updateSerial();
+void setValues(int left, int right);
 
 #endif
