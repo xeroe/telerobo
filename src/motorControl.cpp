@@ -1,4 +1,5 @@
 #include "motorControl.h"
+#include "hoverserial.h"
 #include <arduino.h>
 int LeftMotorPin = 23;
 int rightMotorPin = 22;
@@ -12,38 +13,35 @@ void setupMotor()
 
 void forward()
 {
-    // analogWrite(LeftMotorPin, 255);
-    // analogWrite(rightMotorPin, 255);
+    Send(1000, 1000);
 }
 
 void reverse()
 {
+    Send(-1000, -1000);
 }
 
 void left()
 {
-    // analogWrite(LeftMotorPin, 255);
+    Send(1000, -1000);
 }
 
 void right()
 {
-    // analogWrite(rightMotorPin, 255);
+    Send(-1000, 1000);
 }
 
 void stop()
 {
-    // analogWrite(LeftMotorPin, 0);
-    // analogWrite(rightMotorPin, 0);
+    Send(0, 0);
 }
 
 void leftrightRelease()
 {
-    // analogWrite(LeftMotorPin, 0);
-    // analogWrite(rightMotorPin, 0);
+    stop();
 }
 
 void resetMotor()
 {
-    // analogWrite(LeftMotorPin, 0);
-    // analogWrite(rightMotorPin, 0);
+    stop();
 }

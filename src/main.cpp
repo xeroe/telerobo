@@ -19,5 +19,4 @@ void loop(void)
   webserverLoop();
   guiLoop();
   serialLoop();
-  ArduinoOTA.handle();
 }
