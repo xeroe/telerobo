@@ -14,22 +14,22 @@ void setupMotor()
 
 void forward()
 {
-    setValues(1000, 1000);
+    setValues(500, 500);
 }
 
 void reverse()
 {
-    setValues(-1000, -1000);
+    setValues(-500, -500);
 }
 
 void left()
 {
-    setValues(1000, -1000);
+    setValues(-500, 500);
 }
 
 void right()
 {
-    setValues(-1000, 1000);
+    setValues(500, -500);
 }
 
 void stop()
