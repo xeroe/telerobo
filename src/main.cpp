@@ -9,15 +9,15 @@ void setup(void)
   serialSetup();
   setupWebserver();
   setupGui();
-  // setupMotor();
+  setupMotor();
   setupOTA();
 }
 
 void loop(void)
 {
+  ArduinoOTA.handle();
+
   webserverLoop();
   guiLoop();
   updateSerial();
-
-  ArduinoOTA.handle();
 }
