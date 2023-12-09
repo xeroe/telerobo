@@ -27,6 +27,7 @@ void setupWebserver()
         do
         {
             delay(500);
+            updateSerial();
             Serial.print(".");
             timeout--;
         } while (timeout && WiFi.status() != WL_CONNECTED);

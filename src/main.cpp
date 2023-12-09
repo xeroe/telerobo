@@ -6,12 +6,11 @@
 
 void setup(void)
 {
-
+  serialSetup();
   setupWebserver();
   setupGui();
   // setupMotor();
   setupOTA();
-  serialSetup();
 }
 
 void loop(void)
