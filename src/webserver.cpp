@@ -2,6 +2,7 @@
 #include <WiFi.h>
 #include <DNSServer.h>
 #include "ssid.h"
+#include "motorControl.h"
 /* CONFIG PART, @KRISSI HIER SACHEN EINTRAGEN*/
 
 /* config ende*/
