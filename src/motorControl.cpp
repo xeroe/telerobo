@@ -24,12 +24,12 @@ void reverse()
 
 void left()
 {
-    setValues(-500, 500);
+    setValues(-250, 250);
 }
 
 void right()
 {
-    setValues(500, -500);
+    setValues(250, -250);
 }
 
 void stop()
