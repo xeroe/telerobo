@@ -1,5 +1,6 @@
 #include "gui.h"
 #include "motorControl.h"
+#include "ultrasonic.h"
 int statusLabelId;
 int graphId;
 int millisLabelId;
@@ -89,6 +90,9 @@ void setupGui()
      * password, for example begin("ESPUI Control", "username", "password")
      */
     // ESPUI.sliderContinuous = true;
+
+    graphId = ESPUI.graph("Graph Test", ControlColor::Wetasphalt);
+
     ESPUI.begin("TeleRobo Control");
     Serial.println(WiFi.getMode() == WIFI_AP ? WiFi.softAPIP() : WiFi.localIP());
 }
@@ -97,17 +101,14 @@ void guiLoop()
 {
     static long oldTime = 0;
     static bool testSwitchState = false;
-    delay(10);
+    delay(30);
     return;
 
-    if (millis() - oldTime > 5000)
+    if (millis() - oldTime > 100)
     {
-        ESPUI.print(millisLabelId, String(millis()));
 
-        ESPUI.addGraphPoint(graphId, random(1, 50));
-
-        testSwitchState = !testSwitchState;
-        ESPUI.updateSwitcher(testSwitchId, testSwitchState);
+        int distance = readUltrasonic();
+        ESPUI.addGraphPoint(graphId, distance);
 
         oldTime = millis();
     }
