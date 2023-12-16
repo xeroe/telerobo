@@ -63,7 +63,7 @@ void updateSerial()
 void safetyDance()
 {
     int distance = readUltrasonic();
-    if (distance > 0 && distance < 20)
+    if (distance > 0 && distance < 30)
     {
         if (valueLeft > 0)
             valueLeft = 0;
