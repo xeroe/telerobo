@@ -11,6 +11,5 @@ int readUltrasonic()
     int distance = 0;
 
     distance = sonar[0].ping_cm();
-
     return distance;
 }

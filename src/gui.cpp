@@ -101,10 +101,9 @@ void guiLoop()
 {
     static long oldTime = 0;
     static bool testSwitchState = false;
-    delay(10);
-    return;
+    delay(2);
 
-    if (millis() - oldTime > 500)
+    if (millis() - oldTime > 50)
     {
 
         int distance = readUltrasonic();
