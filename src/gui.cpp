@@ -104,7 +104,7 @@ void guiLoop()
     delay(10);
     return;
 
-    if (millis() - oldTime > 100)
+    if (millis() - oldTime > 500)
     {
 
         int distance = readUltrasonic();

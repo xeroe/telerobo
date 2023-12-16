@@ -3,7 +3,7 @@
 #define MAX_DISTANCE 200 // Maximum distance (in cm) to ping.
 
 NewPing sonar[SONAR_NUM] = { // Sensor object array.
-    NewPing(34, 35, MAX_DISTANCE)};
+    NewPing(32, 33, MAX_DISTANCE)};
 
 extern int distance;
 int readUltrasonic()
