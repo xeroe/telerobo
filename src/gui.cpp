@@ -91,7 +91,7 @@ void setupGui()
      */
     // ESPUI.sliderContinuous = true;
 
-    graphId = ESPUI.graph("Graph Test", ControlColor::Wetasphalt);
+    graphId = ESPUI.graph("Distance (cm)", ControlColor::Wetasphalt);
 
     ESPUI.begin("TeleRobo Control");
     Serial.println(WiFi.getMode() == WIFI_AP ? WiFi.softAPIP() : WiFi.localIP());
@@ -101,14 +101,14 @@ void guiLoop()
 {
     static long oldTime = 0;
     static bool testSwitchState = false;
-    delay(30);
+    delay(10);
     return;
 
     if (millis() - oldTime > 100)
     {
 
         int distance = readUltrasonic();
-        ESPUI.addGraphPoint(graphId, distance);
+        ESPUI.addGraphPoint(graphId, random(1, 50));
 
         oldTime = millis();
     }
