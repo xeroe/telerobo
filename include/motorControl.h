@@ -10,5 +10,5 @@ void leftrightRelease();
 void resetMotor();
 void updateSerial();
 void setValues(int left, int right);
-
+void safetyDance();
 #endif

@@ -90,7 +90,7 @@ void setupGui()
      * password, for example begin("ESPUI Control", "username", "password")
      */
     // ESPUI.sliderContinuous = true;
-    millisLabelId = ESPUI.label("Distance:", ControlColor::Emerald, "0");
+    // millisLabelId = ESPUI.label("Distance:", ControlColor::Emerald, "0");
     // graphId = ESPUI.graph("Distance (cm)", ControlColor::Wetasphalt);
 
     ESPUI.begin("TeleRobo Control");
@@ -106,9 +106,9 @@ void guiLoop()
     if (millis() - oldTime > 50)
     {
 
-        int distance = readUltrasonic();
-        // ESPUI.addGraphPoint(graphId, distance);
-        ESPUI.print(millisLabelId, String(distance));
+        // int distance = readUltrasonic();
+        //  ESPUI.addGraphPoint(graphId, distance);
+        // ESPUI.print(millisLabelId, String(distance));
         oldTime = millis();
     }
 }

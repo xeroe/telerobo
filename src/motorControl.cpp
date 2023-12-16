@@ -1,5 +1,6 @@
 #include "motorControl.h"
 #include "hoverserial.h"
+#include "ultrasonic.h"
 #include <arduino.h>
 int LeftMotorPin = 23;
 int rightMotorPin = 22;
@@ -55,5 +56,18 @@ void setValues(int left, int right)
 
 void updateSerial()
 {
+    safetyDance();
     Send(valueLeft, valueRight);
+}
+
+void safetyDance()
+{
+    int distance = readUltrasonic();
+    if (distance > 0 && distance < 20)
+    {
+        if (valueLeft > 0)
+            valueLeft = 0;
+        if (valueRight > 0)
+            valueRight = 0;
+    }
 }
