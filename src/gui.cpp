@@ -90,8 +90,8 @@ void setupGui()
      * password, for example begin("ESPUI Control", "username", "password")
      */
     // ESPUI.sliderContinuous = true;
-
-    graphId = ESPUI.graph("Distance (cm)", ControlColor::Wetasphalt);
+    millisLabelId = ESPUI.label("Distance:", ControlColor::Emerald, "0");
+    // graphId = ESPUI.graph("Distance (cm)", ControlColor::Wetasphalt);
 
     ESPUI.begin("TeleRobo Control");
     Serial.println(WiFi.getMode() == WIFI_AP ? WiFi.softAPIP() : WiFi.localIP());
@@ -108,8 +108,8 @@ void guiLoop()
     {
 
         int distance = readUltrasonic();
-        ESPUI.addGraphPoint(graphId, random(1, 50));
-
+        // ESPUI.addGraphPoint(graphId, distance);
+        ESPUI.print(millisLabelId, String(distance));
         oldTime = millis();
     }
 }
