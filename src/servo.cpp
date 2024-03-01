@@ -13,7 +13,7 @@
 Servo myservo; // create Servo object to control a servo
 // twelve Servo objects can be created on most boards
 
-int pos = 0; // variable to store the servo position
+int pos = 5; // variable to store the servo position
 int lastmillis = 0;
 int inc = 1;
 void ServoSetup()
@@ -34,7 +34,7 @@ void Servoloop()
 
     lastmillis = millis();
 
-    if (pos >= 270 || pos <= 1)
+    if (pos >= 270 || pos <= 0)
         inc = -inc;
 
     pos += inc;
