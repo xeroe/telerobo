@@ -8,7 +8,7 @@
  https://www.arduino.cc/en/Tutorial/LibraryExamples/Sweep
 */
 #include <Arduino.h>
-#include <Servo.h>
+#include <ESP32Servo.h>
 
 Servo myservo; // create Servo object to control a servo
 // twelve Servo objects can be created on most boards
@@ -17,7 +17,13 @@ int pos = 0; // variable to store the servo position
 int lastmillis = 0;
 void ServoSetup()
 {
-    myservo.attach(16); // attaches the servo on pin 9 to the Servo object
+    // Allow allocation of all timers
+    ESP32PWM::allocateTimer(0);
+    ESP32PWM::allocateTimer(1);
+    ESP32PWM::allocateTimer(2);
+    ESP32PWM::allocateTimer(3);
+    myservo.setPeriodHertz(50);     // standard 50 hz servo
+    myservo.attach(16, 1000, 2000); // attaches the servo on pin 18 to the servo object
 }
 
 void Servoloop()

@@ -2,6 +2,7 @@
 #include "motorControl.h"
 #include "ota.h"
 #include "hoverserial.h"
+#include "servo.h"
 
 #include <ArduinoOTA.h>
 
@@ -12,6 +13,7 @@ void setup(void)
   setupGui();
   setupMotor();
   setupOTA();
+  ServoSetup();
 }
 
 void loop(void)
@@ -20,4 +22,5 @@ void loop(void)
   webserverLoop();
   guiLoop();
   updateSerial();
+  Servoloop();
 }
