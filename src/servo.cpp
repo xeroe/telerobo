@@ -28,12 +28,12 @@ void ServoSetup()
 
 void Servoloop()
 {
-    if (millis() < lastmillis + 15)
+    if (millis() < lastmillis + 100)
         return;
 
     lastmillis = millis();
 
-    for (pos = 0; pos <= 180; pos += 1)
+    for (pos = 0; pos <= 270; pos += 1)
     { // goes from 0 degrees to 180 degrees
         // in steps of 1 degree
         myservo.write(pos); // tell servo to go to position in variable 'pos'
