@@ -29,12 +29,12 @@ void ServoSetup()
 
 void Servoloop()
 {
-    if (millis() < lastmillis + 100)
+    if (millis() < lastmillis + 10)
         return;
 
     lastmillis = millis();
 
-    if (pos >= 270 || pos <= 0)
+    if (pos >= 90 || pos <= 0)
         inc = -inc;
 
     pos += inc;
